@@ -6,7 +6,7 @@ script:
     - docker images nigirollup/node
 
 before_deploy: 
-    - docker login -u DOCKER_HUB_USERNAME -p DOCKER_HUB_PASSWORD
+    - docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD
 
 deploy: 
     provider: script
