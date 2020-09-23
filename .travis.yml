@@ -4,3 +4,12 @@ services:
 script:
     - docker build -t nigirollup/node .
     - docker images nigirollup/node
+
+before_deploy: 
+    - docker login -u DOCKER_HUB_USERNAME -p DOCKER_HUB_PASSWORD
+
+deploy: 
+    provider: script
+    script: docker push nigirollup/node
+    on: 
+        branch: master
